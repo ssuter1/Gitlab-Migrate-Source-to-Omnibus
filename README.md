@@ -87,15 +87,19 @@ Create a full backup using new postgres DB:
 ```
 sudo -u git -H bundle exec rake gitlab:backup:create RAILS_ENV=production
 ```
-		3. Download identical Omnibus .deb to /opt: wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/trusty/gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
-		4. Important or shit will go horribly wrong: Stop all gitlab related processes and prevent them from starting on boot:
-
-			1. sudo update-rc.d gitlab disable
-			2. sudo update-rc.d nginx disable
-			3. sudo update-rc.d redis-server disable
-			4. sudo service gitlab stop
-			5. sudo service nginx stop
-			6. sudo service redis-server stop
+Download identical Omnibus .deb to /opt: 
+```
+wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/trusty/gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
+```
+Important or shit will go horribly wrong: Stop all gitlab related processes and prevent them from starting on boot:
+```
+sudo update-rc.d gitlab disable
+sudo update-rc.d nginx disable
+sudo update-rc.d redis-server disable
+sudo service gitlab stop
+sudo service nginx stop
+sudo service redis-server stop
+```
 		5. dpkg -i gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
 		6. Once installed, run "gitlab-ctl reconfigure"
 		7. Overwrite gitlab.rb file with our own version
