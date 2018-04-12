@@ -100,10 +100,19 @@ sudo service gitlab stop
 sudo service nginx stop
 sudo service redis-server stop
 ```
-		5. dpkg -i gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
-		6. Once installed, run "gitlab-ctl reconfigure"
-		7. Overwrite gitlab.rb file with our own version
-		8. Run "gitlab-ctl reconfigure" again.  
+Install Omnibus package for your respective distro:
+```
+dpkg -i gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
+```
+Once installed run: 
+```
+"gitlab-ctl reconfigure"
+```
+Overwrite gitlab.rb file with our own version
+Run: 
+```
+gitlab-ctl reconfigure
+```
 		9. Copy full backup taken in step 2 to /var/opt/gitlab/backups "cp 1523306095_gitlab_backup.tar /var/opt/gitlab/backups/"
 		10. Stop processes that access the db:
 
