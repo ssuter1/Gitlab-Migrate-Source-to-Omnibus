@@ -19,7 +19,7 @@ SELECT true AS enabled
 FROM pg_available_extensions
 WHERE name = 'pg_trgm'
 AND installed_version IS NOT NULL;           (Will return enabled)
-5. \q         
+\q         
 ```
 		7. Install latest version of "pgloader" package from PostgreSQL repo:
 
