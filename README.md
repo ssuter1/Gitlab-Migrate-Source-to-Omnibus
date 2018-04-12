@@ -60,7 +60,7 @@ Migrate data from MySQL to PostgreSQL:
 Create file /home/git/gitlab/commands.load with contents:
 ```
 LOAD DATABASE
-FROM mysql://username:password@host/gitlab           (Grab creds form KeePass)
+FROM mysql://username:password@host/gitlab           (Grab creds from)
 INTO postgresql://postgres@unix://var/run/postgresql:/gitlabhq_production
 
 WITH include no drop, truncate, disable triggers, create no tables,
