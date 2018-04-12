@@ -106,18 +106,23 @@ dpkg -i gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
 ```
 Once installed run: 
 ```
-"gitlab-ctl reconfigure"
+gitlab-ctl reconfigure
 ```
 Overwrite gitlab.rb file with our own version
 Run: 
 ```
 gitlab-ctl reconfigure
 ```
-		9. Copy full backup taken in step 2 to /var/opt/gitlab/backups "cp 1523306095_gitlab_backup.tar /var/opt/gitlab/backups/"
-		10. Stop processes that access the db:
+Copy full backup taken in step 2 to /var/opt/gitlab/backups
+```
+"cp XXXXXXXXXX_gitlab_backup.tar /var/opt/gitlab/backups/"
+```
 
-			1. sudo gitlab-ctl stop unicorn
-			2. sudo gitlab-ctl stop sidekiq
+Stop processes that access the db:
+```
+sudo gitlab-ctl stop unicorn
+sudo gitlab-ctl stop sidekiq
+```
 		11. Fix /var/opt/backups/XXXXXXXXXX_gitlab_backup.tar permissions: "chown git:root /var/opt/gitlab/backups/XXXXXXXXXX_gitlab_backup.tar"
 		12. Restore backup to new Omnibus install: "sudo gitlab-rake gitlab:backup:restore BACKUP=XXXXXXXXXX"
 		13. Check gitlab database and config files: "sudo gitlab-rake gitlab:check SANITIZE=true"
