@@ -30,15 +30,17 @@ sudo apt-get update
 sudo apt-get install pgloader
 sudo service gitlab stop
 ```
-		9. Migrate Database from MySQL to PostgreSQL
-
-			1. cd /home/git/gitlab
-			2. sudo -u git mv config/database.yml config/database.yml.bak
-			3. sudo -u git cp config/database.yml.postgresql config/database.yml
-			4. sudo -u git -H chmod o-rwx config/database.yml
-		10. Prepare DB schema (This step had issues)
-
-			1. sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
+Migrate Database from MySQL to PostgreSQL
+```
+cd /home/git/gitlab
+sudo -u git mv config/database.yml config/database.yml.bak
+sudo -u git cp config/database.yml.postgresql config/database.yml
+sudo -u git -H chmod o-rwx config/database.yml
+```
+Prepare DB schema (This step had issues)
+```
+sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
+```
 			2. Errors:
 
 				1. Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "database"=>"gitlabhq_production", "pool"=>10}
