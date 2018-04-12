@@ -1,6 +1,5 @@
 # Gitlab-Migrate-Source-to-Omnibus
-My experience migrating a massive source installation to Omnibus.
-=================================================================
+==================================
 
 1. Convert database from MySQL to postgres
 Derived from this guide:
