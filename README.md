@@ -167,17 +167,19 @@ nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/lcsr-domain.key"
 
 3. Upgrade Gitlab 8.10.3 to latest Omnibus install
 
-		1. Testing one single version hop:
+Testing one single version hop:
+```
+curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+sudo apt-get install gitlab-ce=8.11.11-ce.0
+```
 
-			1. curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
-			2. sudo apt-get install gitlab-ce=8.11.11-ce.0
-			3. Success!
-		2. Jumping a few more versions:
-
-			1. sudo apt-get install gitlab-ce=8.17.8-ce.0
-			2. sudo apt-get install gitlab-ce=9.0.13-ce.0
-			3. sudo apt-get install gitlab-ce=10.0.7-ce.0
-			4. "apt-get upgrade" to upgrade to latest version 10.6.4
-	4. Party!
+Jumping a few more versions to latest 10.6.4:
+```
+sudo apt-get install gitlab-ce=8.17.8-ce.0
+sudo apt-get install gitlab-ce=9.0.13-ce.0
+sudo apt-get install gitlab-ce=10.0.7-ce.0
+"apt-get upgrade" to upgrade to latest version 10.6.4
+```
+4. Party!
 
 
