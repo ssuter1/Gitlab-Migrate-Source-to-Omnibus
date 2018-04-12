@@ -1,10 +1,10 @@
 # Gitlab-Migrate-Source-to-Omnibus
-My experience migrating a source installation to Omnibus.
+My experience migrating a massive source installation to Omnibus.
 
 
-	1. Convert database from MySQL to postgres
-	Derived from this guide:
-		https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md#6-database
+1. Convert database from MySQL to postgres
+Derived from this guide:
+https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md#6-database
 ```
 		2. sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib
 		3. sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"
