@@ -21,14 +21,15 @@ WHERE name = 'pg_trgm'
 AND installed_version IS NOT NULL;           (Will return enabled)
 \q         
 ```
-		7. Install latest version of "pgloader" package from PostgreSQL repo:
-
-			1. sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-			2. sudo apt-get install wget ca-certificates
-			3. wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-			4. sudo apt-get update
-			5. sudo apt-get install pgloader
-		8. sudo service gitlab stop
+Install latest version of "pgloader" package from PostgreSQL repo:
+```
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo apt-get install wget ca-certificates
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install pgloader
+sudo service gitlab stop
+```
 		9. Migrate Database from MySQL to PostgreSQL
 
 			1. cd /home/git/gitlab
