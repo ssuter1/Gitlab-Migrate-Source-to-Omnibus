@@ -145,10 +145,13 @@ Active users: XXX
 
 Checking GitLab ... Finished
 ```
-		15. Move contents of /home/git/gitlab/.secret to gitlab_rails secret in /etc/gitlab/gitlab-secrets.json
-		16. Move contents of /home/git/gitlab/.gitlab_shell_secret to gitlab_shell in /etc/gitlab/gitlab-secrets.json
-		17. Move contents of /home/git/gitlab/config/secrets.yml to db_key_base in /etc/gitlab/gitlab-secrets.json
-		18. Run "gitlab-ctl reconfigure"
+Move contents of /home/git/gitlab/.secret to gitlab_rails secret in /etc/gitlab/gitlab-secrets.json
+
+Move contents of /home/git/gitlab/.gitlab_shell_secret to gitlab_shell in /etc/gitlab/gitlab-secrets.json
+
+Move contents of /home/git/gitlab/config/secrets.yml to db_key_base in /etc/gitlab/gitlab-secrets.json
+
+Run ```"gitlab-ctl reconfigure"```
 		19. Move SSL certs from old gitlab install to new Omnibus:
 
 			1. Copy bundle.crt and lcsr-domain.key from /etc/nginx/ssl to /etc/gitlab/ssl
