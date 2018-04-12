@@ -77,10 +77,16 @@ sudo -u postgres pgloader commands.load
 sudo service gitlab start
 ```
 Pray
-	2. Restore converted database to Gitlab Omnibus installation
 
-		1. Temporarily fix permissions on /home/git/gitlab/tmp/backups directory: "chmod -R 777 /home/git/gitlab/tmp/backups"
-		2. Create a full backup using new postgres DB: sudo -u git -H bundle exec rake gitlab:backup:create RAILS_ENV=production
+2. Restore converted database to Gitlab Omnibus installation
+Temporarily fix permissions on /home/git/gitlab/tmp/backups directory: 
+```
+"chmod -R 777 /home/git/gitlab/tmp/backups"
+```
+Create a full backup using new postgres DB: 
+```
+sudo -u git -H bundle exec rake gitlab:backup:create RAILS_ENV=production
+```
 		3. Download identical Omnibus .deb to /opt: wget --content-disposition https://packages.gitlab.com/gitlab/gitlab-ce/packages/ubuntu/trusty/gitlab-ce_8.10.13-ce.0_amd64.deb/download.deb
 		4. Important or shit will go horribly wrong: Stop all gitlab related processes and prevent them from starting on boot:
 
