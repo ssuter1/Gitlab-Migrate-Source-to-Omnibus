@@ -123,9 +123,18 @@ Stop processes that access the db:
 sudo gitlab-ctl stop unicorn
 sudo gitlab-ctl stop sidekiq
 ```
-		11. Fix /var/opt/backups/XXXXXXXXXX_gitlab_backup.tar permissions: "chown git:root /var/opt/gitlab/backups/XXXXXXXXXX_gitlab_backup.tar"
-		12. Restore backup to new Omnibus install: "sudo gitlab-rake gitlab:backup:restore BACKUP=XXXXXXXXXX"
-		13. Check gitlab database and config files: "sudo gitlab-rake gitlab:check SANITIZE=true"
+Fix /var/opt/backups/XXXXXXXXXX_gitlab_backup.tar permissions: 
+```
+chown git:root /var/opt/gitlab/backups/XXXXXXXXXX_gitlab_backup.tar
+```
+Restore backup to new Omnibus install: 
+```
+sudo gitlab-rake gitlab:backup:restore BACKUP=XXXXXXXXXX
+```
+Check gitlab database and config files: 
+```
+sudo gitlab-rake gitlab:check SANITIZE=true
+```
 		14. Hopefully you'll get this result:
 
 			1. Redis version >= 2.8.0? ... yes
