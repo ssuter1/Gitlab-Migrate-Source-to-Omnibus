@@ -5,9 +5,9 @@
 Derived from this guide:
 https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md#6-database
 ```
-		sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib
-		sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"
-		sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
+sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib
+sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"
+sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
 ```		
 Test connection to new database: 
 ```
