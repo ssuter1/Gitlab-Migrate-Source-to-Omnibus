@@ -58,7 +58,7 @@ sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
 Migrate data from MySQL to PostgreSQL:
 
 Create file /home/git/gitlab/commands.load with contents:
-
+```
 LOAD DATABASE
 FROM mysql://username:password@host/gitlab           (Grab creds form KeePass)
 INTO postgresql://postgres@unix://var/run/postgresql:/gitlabhq_production
@@ -70,6 +70,7 @@ data only
 ALTER SCHEMA 'gitlab' RENAME TO 'public'
 
 ;
+```
 				2. sudo -u postgres pgloader commands.load
 				3. sudo service gitlab start
 				4. Pray
