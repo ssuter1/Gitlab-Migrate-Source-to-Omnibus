@@ -52,7 +52,7 @@ Fix:
 vi /home/git/gitlab/Gemfile 
 Commnent out line "#gem 'pg', '~> 0.18.2', group: :postgres"
 Add line: "gem 'pg', '~> 0.20'"
-"bundle install --no-deployment"
+bundle install --no-deployment
 sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
 ```
 Migrate data from MySQL to PostgreSQL:
@@ -81,7 +81,7 @@ Pray
 2. Restore converted database to Gitlab Omnibus installation
 Temporarily fix permissions on /home/git/gitlab/tmp/backups directory: 
 ```
-"chmod -R 777 /home/git/gitlab/tmp/backups"
+chmod -R 777 /home/git/gitlab/tmp/backups
 ```
 Create a full backup using new postgres DB: 
 ```
@@ -115,7 +115,7 @@ gitlab-ctl reconfigure
 ```
 Copy full backup taken in step 2 to /var/opt/gitlab/backups
 ```
-"cp XXXXXXXXXX_gitlab_backup.tar /var/opt/gitlab/backups/"
+cp XXXXXXXXXX_gitlab_backup.tar /var/opt/gitlab/backups/
 ```
 
 Stop processes that access the db:
