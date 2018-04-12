@@ -46,13 +46,15 @@ Errors from above command:
 Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "database"=>"gitlabhq_production", "pool"=>10}
 
 [2018-04-02T11:27:05.318254 #4985] DEBUG -- sentry: ** [Raven] Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). excluded from capture due to environment or should_capture callback
-			3. Fix:
 
-				1. Open /home/git/gitlab/Gemfile 
-				2. Commnent out line "#gem 'pg', '~> 0.18.2', group: :postgres"
-				3. Add line: "gem 'pg', '~> 0.20'"
-				4. Run "bundle install --no-deployment"
-				5. sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
+Fix:
+```
+Open /home/git/gitlab/Gemfile 
+Commnent out line "#gem 'pg', '~> 0.18.2', group: :postgres"
+Add line: "gem 'pg', '~> 0.20'"
+Run "bundle install --no-deployment"
+sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
+```
 			4. Migrate data from MySQL to PostgreSQL:
 
 				1. Create file /home/git/gitlab/commands.load with contents:
