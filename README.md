@@ -59,17 +59,17 @@ Migrate data from MySQL to PostgreSQL:
 
 Create file /home/git/gitlab/commands.load with contents:
 
-					1. LOAD DATABASE
-					2.      FROM mysql://username:password@host/gitlab           (Grab creds form KeePass)
-					3.      INTO postgresql://postgres@unix://var/run/postgresql:/gitlabhq_production
-					4. 
-					5. WITH include no drop, truncate, disable triggers, create no tables,
-					6.      create no indexes, preserve index names, no foreign keys,
-					7.      data only
-					8. 
-					9. ALTER SCHEMA 'gitlab' RENAME TO 'public'
-					10. 
-					11. ;
+LOAD DATABASE
+FROM mysql://username:password@host/gitlab           (Grab creds form KeePass)
+INTO postgresql://postgres@unix://var/run/postgresql:/gitlabhq_production
+
+WITH include no drop, truncate, disable triggers, create no tables,
+create no indexes, preserve index names, no foreign keys,
+data only
+ 
+ALTER SCHEMA 'gitlab' RENAME TO 'public'
+
+;
 				2. sudo -u postgres pgloader commands.load
 				3. sudo service gitlab start
 				4. Pray
