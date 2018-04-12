@@ -55,9 +55,9 @@ Add line: "gem 'pg', '~> 0.20'"
 "bundle install --no-deployment"
 sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
 ```
-			4. Migrate data from MySQL to PostgreSQL:
+Migrate data from MySQL to PostgreSQL:
 
-				1. Create file /home/git/gitlab/commands.load with contents:
+Create file /home/git/gitlab/commands.load with contents:
 
 					1. LOAD DATABASE
 					2.      FROM mysql://username:password@host/gitlab           (Grab creds form KeePass)
