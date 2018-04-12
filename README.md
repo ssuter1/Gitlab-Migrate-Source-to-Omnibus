@@ -1,4 +1,4 @@
-# Gitlab-Migrate-Source-to-Omnibuss
+# Gitlab-Migrate-Source-to-Omnibus
 My experience migrating a source installation to Omnibus.
 
 
