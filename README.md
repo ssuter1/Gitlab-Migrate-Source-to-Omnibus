@@ -135,15 +135,16 @@ Check gitlab database and config files:
 ```
 sudo gitlab-rake gitlab:check SANITIZE=true
 ```
-		14. Hopefully you'll get this result:
+Hopefully you'll get this result:
+```
+Redis version >= 2.8.0? ... yes
+Ruby version >= 2.1.0 ? ... yes (2.1.8)
+Your git bin path is "/opt/gitlab/embedded/bin/git"
+Git version >= 2.7.3 ? ... yes (2.7.4)
+Active users: XXX
 
-			1. Redis version >= 2.8.0? ... yes
-			2. Ruby version >= 2.1.0 ? ... yes (2.1.8)
-			3. Your git bin path is "/opt/gitlab/embedded/bin/git"
-			4. Git version >= 2.7.3 ? ... yes (2.7.4)
-			5. Active users: 559
-			6. 
-			7. Checking GitLab ... Finished
+Checking GitLab ... Finished
+```
 		15. Move contents of /home/git/gitlab/.secret to gitlab_rails secret in /etc/gitlab/gitlab-secrets.json
 		16. Move contents of /home/git/gitlab/.gitlab_shell_secret to gitlab_shell in /etc/gitlab/gitlab-secrets.json
 		17. Move contents of /home/git/gitlab/config/secrets.yml to db_key_base in /etc/gitlab/gitlab-secrets.json
