@@ -6,9 +6,9 @@ My experience migrating a massive source installation to Omnibus.
 Derived from this guide:
 https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md#6-database
 ```
-		2. sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib
-		3. sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"
-		4. sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
+		sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib
+		sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"
+		sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
 ```		
 		5. Test connection to new database: 
 		"sudo -u git -H psql -d gitlabhq_production"
