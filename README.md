@@ -49,10 +49,10 @@ Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem
 
 Fix:
 ```
-Open /home/git/gitlab/Gemfile 
+vi /home/git/gitlab/Gemfile 
 Commnent out line "#gem 'pg', '~> 0.18.2', group: :postgres"
 Add line: "gem 'pg', '~> 0.20'"
-Run "bundle install --no-deployment"
+"bundle install --no-deployment"
 sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
 ```
 			4. Migrate data from MySQL to PostgreSQL:
