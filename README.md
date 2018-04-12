@@ -71,9 +71,12 @@ ALTER SCHEMA 'gitlab' RENAME TO 'public'
 
 ;
 ```
-				2. sudo -u postgres pgloader commands.load
-				3. sudo service gitlab start
-				4. Pray
+Run the following commmands to complete migration:
+```
+sudo -u postgres pgloader commands.load
+sudo service gitlab start
+```
+Pray
 	2. Restore converted database to Gitlab Omnibus installation
 
 		1. Temporarily fix permissions on /home/git/gitlab/tmp/backups directory: "chmod -R 777 /home/git/gitlab/tmp/backups"
