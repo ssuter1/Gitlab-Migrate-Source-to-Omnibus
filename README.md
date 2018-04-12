@@ -13,13 +13,14 @@ Test connection to new database:
 ```
 sudo -u git -H psql -d gitlabhq_production
 ```
-		6. Check if the pg_trgm extension is enabled:
-
-			1. SELECT true AS enabled
-			2. FROM pg_available_extensions
-			3. WHERE name = 'pg_trgm'
-			4. AND installed_version IS NOT NULL;           (Will return enabled)
-			5. \q         (quit)
+Check if the pg_trgm extension is enabled (After logging into postgres db with command above):
+```
+SELECT true AS enabled
+FROM pg_available_extensions
+WHERE name = 'pg_trgm'
+AND installed_version IS NOT NULL;           (Will return enabled)
+5. \q         
+```
 		7. Install latest version of "pgloader" package from PostgreSQL repo:
 
 			1. sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
