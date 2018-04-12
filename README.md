@@ -152,18 +152,20 @@ Move contents of /home/git/gitlab/.gitlab_shell_secret to gitlab_shell in /etc/g
 Move contents of /home/git/gitlab/config/secrets.yml to db_key_base in /etc/gitlab/gitlab-secrets.json
 
 Run ```"gitlab-ctl reconfigure"```
-		19. Move SSL certs from old gitlab install to new Omnibus:
 
-			1. Copy bundle.crt and lcsr-domain.key from /etc/nginx/ssl to /etc/gitlab/ssl
-			2. Modify options in /etc/gitlab/gitlab.rb: 
+Move SSL certs from old gitlab install to new Omnibus:
+```Copy xxxxxx.crt and xxxxxxxx.key from /etc/nginx/ssl to /etc/gitlab/ssl```
 
-				1. nginx['enable'] = true
-				2. nginx['redirect_http_to_https'] = true
-				3. nginx['redirect_http_to_https_port'] = 80
-				4. nginx['ssl_certificate'] = "/etc/gitlab/ssl/bundle.crt"
-				5. nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/lcsr-domain.key"
-		20. Fin
-	3. Upgrade Gitlab 8.10.3 to latest Omnibus install
+Modify options in /etc/gitlab/gitlab.rb: 
+```
+nginx['enable'] = true
+nginx['redirect_http_to_https'] = true
+nginx['redirect_http_to_https_port'] = 80
+nginx['ssl_certificate'] = "/etc/gitlab/ssl/bundle.crt"
+nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/lcsr-domain.key"
+```
+
+3. Upgrade Gitlab 8.10.3 to latest Omnibus install
 
 		1. Testing one single version hop:
 
