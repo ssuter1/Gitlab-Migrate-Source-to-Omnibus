@@ -41,10 +41,11 @@ Prepare DB schema (This step had issues)
 ```
 sudo -u git -H bundle exec rake db:create db:migrate RAILS_ENV=production
 ```
-			2. Errors:
+Errors from above command:
 
-				1. Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "database"=>"gitlabhq_production", "pool"=>10}
-				2. [2018-04-02T11:27:05.318254 #4985] DEBUG -- sentry: ** [Raven] Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). excluded from capture due to environment or should_capture callback
+Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). Couldn't create database for {"adapter"=>"postgresql", "encoding"=>"unicode", "database"=>"gitlabhq_production", "pool"=>10}
+
+[2018-04-02T11:27:05.318254 #4985] DEBUG -- sentry: ** [Raven] Specified 'postgresql' for database adapter, but the gem is not loaded. Add `gem 'pg'` to your Gemfile (and ensure its version is at the minimum required by ActiveRecord). excluded from capture due to environment or should_capture callback
 			3. Fix:
 
 				1. Open /home/git/gitlab/Gemfile 
