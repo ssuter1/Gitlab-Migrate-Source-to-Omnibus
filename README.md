@@ -3,12 +3,15 @@ My experience migrating a source installation to Omnibus.
 
 
 	1. Convert database from MySQL to postgres
-
-		1. https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md#6-database
+	Derived from this guide:
+		https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md#6-database
+```
 		2. sudo apt-get install -y postgresql postgresql-client libpq-dev postgresql-contrib
 		3. sudo -u postgres psql -d template1 -c "CREATE USER git CREATEDB;"
 		4. sudo -u postgres psql -d template1 -c "CREATE EXTENSION IF NOT EXISTS pg_trgm;"
-		5. Test connection to new database: "sudo -u git -H psql -d gitlabhq_production"
+```		
+		5. Test connection to new database: 
+		"sudo -u git -H psql -d gitlabhq_production"
 		6. Check if the pg_trgm extension is enabled:
 
 			1. SELECT true AS enabled
