@@ -161,8 +161,8 @@ Modify options in /etc/gitlab/gitlab.rb:
 nginx['enable'] = true
 nginx['redirect_http_to_https'] = true
 nginx['redirect_http_to_https_port'] = 80
-nginx['ssl_certificate'] = "/etc/gitlab/ssl/bundle.crt"
-nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/lcsr-domain.key"
+nginx['ssl_certificate'] = "/etc/gitlab/ssl/XXXXXXXX.crt"
+nginx['ssl_certificate_key'] = "/etc/gitlab/ssl/XXXXXXXXXXXXX.key"
 ```
 
 3. Upgrade Gitlab 8.10.3 to latest Omnibus install
